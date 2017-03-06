@@ -29,7 +29,7 @@ public class HabitTrackerHelper extends SQLiteOpenHelper {
                 + HabitTrackerEntry._ID + " INTEGER" + " PRIMARY KEY" + " AUTOINCREMENT,"
                 + HabitTrackerEntry.HABIT + " TEXT" + " NOT NULL,"
                 + HabitTrackerEntry.HABIT_DESCRIPTION + " TEXT,"
-                + HabitTrackerEntry.FREQUENCY + " TEXT" + " DEFAULT MONTHLY"
+                + HabitTrackerEntry.FREQUENCY + " INTEGER" + " DEFAULT MONTHLY"
                 + ");";
 
         String SQL_CREATE_USER_INFORMATION_TABLE = "CREATE TABLE " + UserInformationEntry.TABLE_NAME_USER_INFO
@@ -62,7 +62,7 @@ public class HabitTrackerHelper extends SQLiteOpenHelper {
         return cursorUsers;
     }
 
-    public long insertHabit(String habit, String description, String frequency) {
+    public long insertHabit(String habit, String description, int frequency) {
         // Gets the data repository in write mode
         SQLiteDatabase db = getWritableDatabase();
 

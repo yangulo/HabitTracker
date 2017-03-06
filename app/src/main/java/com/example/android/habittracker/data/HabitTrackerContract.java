@@ -24,8 +24,8 @@ public class HabitTrackerContract {
         public static final String FREQUENCY = "Frequency";
 
         //Possible values for frequency
-        public static final String DAILY = "Daily";
-        public static final String WEEKLY = "Weekly";
-        public static final String MONTHLY = "Monthly";
+        public static final int DAILY = 1;
+        public static final int WEEKLY = 2;
+        public static final int MONTHLY = 3;
     }
 }
